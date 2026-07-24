@@ -29,7 +29,7 @@ router.get("/enrollments", (req: Request, res: Response) => {
     );
 
     let filtered_course;
-    for(let i: number = 0 ; i < filtered_enrollment_stu.length ; i++){
+    for(let i: number = 0 ; i < 2 ; i++){
         filtered_course = courses.filter((c) => c.courseId === filtered_enrollment_stu[i]?.courseId);
     }
 
