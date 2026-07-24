@@ -28,10 +28,11 @@ router.get("/enrollments", (req: Request, res: Response) => {
     (student) => student.studentId === studentId
     );
 
-    let filtered_course;
-    for(let i: number = 0 ; i < 2 ; i++){
-        filtered_course = courses.filter((c) => c.courseId === filtered_enrollment_stu[i]?.courseId);
-    }
+    const studentCourseIds = filtered_enrollment_stu.map((e) => e.courseId);
+    
+    const filtered_course = courses.filter((c) =>
+    studentCourseIds.includes(c.courseId)
+  );
 
     return res.status(200).json({
         ok: true,
