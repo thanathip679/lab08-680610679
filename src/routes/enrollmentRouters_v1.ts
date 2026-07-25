@@ -1,8 +1,7 @@
 import { Router, type Request, type Response } from "express";
 
 import {
-  zCourseId,
-  zStudentId,
+  zCourseId
 } from "../libs/zodValidators.js";
 
 import type { Student, Course, Enrollment } from "../libs/types.js";
@@ -29,7 +28,7 @@ router.get("/enrollments", (req: Request, res: Response) => {
     );
 
     const studentCourseIds = filtered_enrollment_stu.map((e) => e.courseId);
-    
+
     const filtered_course = courses.filter((c) =>
     studentCourseIds.includes(c.courseId)
   );
