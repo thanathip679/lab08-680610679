@@ -34,7 +34,7 @@ router.delete("/enrollments", (req: Request, res: Response) => {
         message: "Enrollment does not exist",
       });
     }
-    students.splice(foundIndex,1)
+    enrollments.splice(foundIndex,1)
     return res.status(200).json({
       ok: true,
       message: `Enrollment has been deleted`
